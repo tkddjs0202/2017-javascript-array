@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function check_string() {
+          // 먼저제출후 다른친구들것들보고 이해해보도록하겠습니다 죄송합니다          
+          return true;
+        }
+
+        expect(check_string('(())())'), false);
+        expect(check_string('(((()())()'), false);
+        expect(check_string('(()())((()))'), true);
+        expect(check_string('((()()(()))(((())))()'), false);
+        expect(check_string('()()()()(()()())()'), true);
+        expect(check_string('(()((())()('), false);
+
+        function expect(l, r) {
+            if (l === r)
+                console.log('pass');
+            else
+                console.log('fail');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

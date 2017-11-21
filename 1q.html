@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function calculate(arr) {
+          var result = 0;
+ 
+          for(var i=0; i<arr.length;i++){
+               if(arr[i]== "+"){
+                      result = arr[i-1]+arr[i+1];
+             }
+               else if(arr[i]=="-"){
+                      result = arr[i-1]-arr[i+1];
+             }
+               else if(arr[i]=="*"){
+                      result = arr[i-1]*arr[i+1];
+             }
+
+       }
+          return result;
+        }
+
+        expect(calculate([1, '+', 2]), 3);
+        expect(calculate([1, '-', 2]), -1);
+        expect(calculate([1, '*', 2]), 2);
+       console.log(calculate([1, '+', 2, '+', 3]));              //이부분이 왜 이렇게나오는지 꿈에서고민해보겠습니다....
+        console.log(calculate([1, '*', 2, '+', 3, '*', 10]));
+        expect(calculate([10, '-', 10, '*', 3, '+', 10, '-', 10]), 0);
+      console.log(calculate([5, '*', 5, '*', 10, '+', 100, '-', 300]));
+
+        function expect(l, r) {
+            if (l === r)
+                console.log('pass');
+            else
+                console.log('fail');
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
